@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from BmrClassService WSDL service -->
+
+  <service name="BmrClass" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://server"/>
+      <parameter name="wsdlServiceElement" value="BmrClassService"/>
+      <parameter name="schemaQualified" value="http://server"/>
+      <parameter name="wsdlServicePort" value="BmrClass"/>
+      <parameter name="className" value="server.BmrClass"/>
+      <parameter name="wsdlPortType" value="BmrClass"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://server" xmlns:retNS="http://server" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="generateBmr" qname="operNS:generateBmr" returnQName="retNS:generateBmrReturn" returnType="rtns:double" soapAction="">
+        <parameter xmlns:pns="http://server" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:weight" type="tns:double"/>
+        <parameter xmlns:pns="http://server" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:height" type="tns:double"/>
+        <parameter xmlns:pns="http://server" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:gender" type="tns:string"/>
+        <parameter xmlns:pns="http://server" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:age" type="tns:int"/>
+      </operation>
+      <parameter name="allowedMethods" value="generateBmr"/>
+
+  </service>
+</deployment>

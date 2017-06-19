@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Class-Path: BMI 
+ Soap.jar 
+ BMI 
+ Soap.jar 
+ BMI 
+ Soap.jar 
+ BMI 
+ Soap.jar 
+ BMI 
+ Soap.jar
+
